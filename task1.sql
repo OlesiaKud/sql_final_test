@@ -12,21 +12,21 @@ CREATE PROCEDURE get_interval
 BEGIN
 	DECLARE time_interval VARCHAR(200) DEFAULT "";
 	DECLARE count_day INT;    -- кол-во дней 
-    DECLARE count_hour INT;   -- кол-во часов 
-    DECLARE count_min INT;    -- кол-во минут 
-    DECLARE balance INT;      -- остаток
-    SET balance := count_sec;
+    	DECLARE count_hour INT;   -- кол-во часов 
+    	DECLARE count_min INT;    -- кол-во минут 
+    	DECLARE balance INT;      -- остаток
+    	SET balance := count_sec;
 	
-	SET count_day = balance DIV 86400;   -- ищем кол-во дней
+	SET count_day = balance DIV 86400;   -- ищем кол-во дней (24*60*60)
 	SET balance = balance % 86400;
 	
-    SET count_hour = balance DIV 3600;   -- ищем кол-во часов
-    SET balance =  balance % 3600;
+    	SET count_hour = balance DIV 3600;   -- ищем кол-во часов (60*60)
+   	SET balance =  balance % 3600;
     
-    SET count_min = balance DIV 60;      -- ищем кол-во минут
-    SET balance = balance % 60;
+    	SET count_min = balance DIV 60;      -- ищем кол-во минут (60)
+    	SET balance = balance % 60;
     
-    SET time_interval = CONCAT(count_sec, ' секунд = ', count_day, ' дней, ', count_hour, ' часов, ', count_min,' минут, ', balance, ' секунд ');
+    	SET time_interval = CONCAT(count_sec, ' секунд = ', count_day, ' дней, ', count_hour, ' часов, ', count_min,' минут, ', balance, ' секунд ');
 	SELECT time_interval;
 END ;
 
