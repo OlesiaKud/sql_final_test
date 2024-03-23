@@ -14,7 +14,7 @@ BEGIN
 	DECLARE result VARCHAR(100) DEFAULT "";
 
 	IF input_number BETWEEN 0 AND 1                                -- если пришло 0 и 1
-		THEN SET result = CONCAT('нет четных чисел в промежутке от 0 до ', input_number);
+		THEN SET result = CONCAT('нет четных чисел в [0; ', input_number,']');
 	ELSE
     		IF input_number < 0 
 			THEN SET input_number = input_number *(-1);    -- если пришло  отриц.число
