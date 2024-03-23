@@ -15,7 +15,7 @@ BEGIN
     	DECLARE count_hour INT;   -- кол-во часов 
     	DECLARE count_min INT;    -- кол-во минут 
     	DECLARE balance INT;      -- остаток
-    	SET balance := count_sec;
+    	SET balance = count_sec;
 	
 	SET count_day = balance DIV 86400;   -- ищем кол-во дней (24*60*60)
 	SET balance = balance % 86400;
